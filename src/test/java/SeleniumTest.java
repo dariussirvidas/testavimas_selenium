@@ -17,7 +17,7 @@ public class SeleniumTest {
     public void testSearchByKeyword() {
         Scanner s = new Scanner(Selenium.searchByKeyword("Baranauskas"));
         String res = s.next();
-        //res.replaceAll(",","");
+        res = res.replace(",", "");
         System.out.println(res);
     }
 
