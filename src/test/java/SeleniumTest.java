@@ -1,20 +1,27 @@
-import org.junit.After;
+/*import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.Test;*/
+
+import org.testng.annotations.*;
+
+import java.util.Scanner;
 
 public class SeleniumTest {
 
-    @Before
+    @BeforeTest
     public void testSetup() {
         Selenium.setup();
     }
 
     @Test
     public void testSearchByKeyword() {
-        Selenium.searchByKeyword("Baranauskas");
+        Scanner s = new Scanner(Selenium.searchByKeyword("Baranauskas"));
+        String res = s.next();
+        //res.replaceAll(",","");
+        System.out.println(res);
     }
 
-    @After
+    @AfterTest
     public void testClose() {
         //Selenium.close();
     }

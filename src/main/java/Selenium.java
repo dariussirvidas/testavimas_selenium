@@ -20,7 +20,7 @@ public class Selenium {
         browser.close();
     }
 
-    public static void searchByKeyword(String keyword) {
+    public static String searchByKeyword(String keyword) {
 
         String id = "sb_form_q";
 
@@ -39,6 +39,8 @@ public class Selenium {
         }
         catch (Exception e) {}*/
         waitForElementById(id);
+        WebElement SearchResultField = browser.findElement(By.cssSelector("span.sb_count"));
+        return SearchResultField.getText();
     }
 
     public static void waitForElementById(String id) {
